@@ -1,11 +1,13 @@
 import "./App.css";
 import React, { useState } from "react";
 import { FiUpload } from "react-icons/fi";
+import PropagateLoader from "react-spinners/PropagateLoader";
 import axios from "axios";
 
 const App = () => {
   const [previewImage, setPreviewImage] = useState("");
   const [extractedText, setExtractedText] = useState("");
+  const[loading, setLoading]= useState(false);
 
   const handleChange = (e) => {
     const file = e.target.files[0];
@@ -21,6 +23,7 @@ const App = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     const fileInput = document.getElementById("fileInput");
     const file = fileInput.files[0];
@@ -41,9 +44,11 @@ const App = () => {
       const data = await response.json();
       console.log("Response:", data.extracted_number);
       setExtractedText(data.extracted_number)
+      setLoading(false);
 
     } catch (error) {
       console.error("Error occurred:", error);
+      setLoading(false);
     }
     
   };
@@ -71,15 +76,19 @@ const App = () => {
           </form>
         </div>
         <div className="image-preview">
+          {loading?(<div className="loader"><PropagateLoader color="#e4e4e4" /></div>):""}
+          
           {previewImage ? (
             <img src={previewImage} alt="Preview" />
           ) : (
             <p>No image selected</p>
           )}
         </div>
+        <p style={{fontSize:'12px', alignSelf:'flex-start'}}>Note: Please upload good quality images.</p>
         <div className="result">
           <h3 style={{ marginRight: "10px" }}>Extracted Text:</h3>
-          <h4>{extractedText || "N/A"}</h4>
+          <h4>{extractedText}</h4>
+          
         </div>
       </div>
     </div>

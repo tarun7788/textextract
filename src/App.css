@@ -1,79 +1,175 @@
 .App {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.container {text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  margin-top: 5%;
+}
+
+.heading h1{
+  color: #3465ce;
+}
+
+.image-input {
+  width: 100%;
+}
+
+.image-input .form {
+  width: 100%;
+  display: flex;
+}
+
+.file-input-label {
+  height: 44px;
+  border: 0.5px solid rgb(198, 198, 198);
+  width: 90%;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  display: flex;
+  padding-left: 7%;
+  align-items: center;
+  cursor: pointer;
+  background-color: white;
+  color: #666;
+}
+
+.file-input-label:hover {
+  background-color: #fcfcfc;
+}
+
+.form .two {
+  height: 46px;
+  border: none;
+  width: 10%;
+  color: white;
+  background-color: rgb(29, 134, 255);
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.image-preview {
+  display: flex;
+  font-size: 20px;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+  margin-top: 2%;
+  padding: 1%;
+  width: 98%;
+  background-color: aliceblue;
+  border: 0.5px solid rgb(198, 198, 198);
+  border-radius: 15px;
+  position: relative;
+}
+
+.image-preview img {
+  height: 100%;
+  width: auto;
+}
+
+.result {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.result h3 {
+  font-size: 20px;
+  color: gray;
+}
+
+.result h4 {
+  font-size: 17px;
+  color: black;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
   .container {
-    width: 40%;
-    margin-top: 5%;
+    width: 60%;
   }
-  
-  .heading {}
-  
-  .image-input {
-    width: 100%;
-  }
-  
-  .image-input .form {
-    width: 100%;
-    display: flex;
-  }
-  
-  .file-input-label {
-    height: 44px;
-    border: 0.5px solid rgb(198, 198, 198);
-    width: 90%;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    display: flex;
-    /* justify-content: center; */
-    padding-left: 7%;
-    align-items: center;
-    cursor: pointer;
-    background-color: white;
-    color: #666;
-  }
-  
-  .file-input-label:hover {
-    background-color: #fcfcfc;
-  }
-  
-  .form .two {
-    height: 46px;
-    border: none;
-    width: 10%;
-    color: white;
-    background-color: rgb(29, 134, 255);
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-  }
-  
+
   .image-preview {
-    display: flex;
-    font-size: 20px;
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
-    height: 40vh;
-    margin-top: 2%;
-    padding: 1%;
-    width: 98%;
-    background-color: aliceblue;
-    border: 0.5px solid rgb(198, 198, 198);
-    border-radius: 15px;
+    height: 35vh;
   }
-  
-  .image-preview img {
-    height: 100%;
-    width: auto;
+
+  .file-input-label {
+    font-size: 14px;
+    padding-left: 5%;
   }
-  
-  .result {
-    display: flex;
-    color: gray;
+
+  .form .two {
+    width: 15%;
   }
-  
+
+  .result h3 {
+    font-size: 18px;
+  }
+
+  .result h4 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 80%;
+  }
+
+  .file-input-label {
+    font-size: 12px;
+  }
+
+  .form .two {
+    width: 20%;
+  }
+
+  .image-preview {
+    height: 30vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 90%;
+  }
+
+  .file-input-label {
+    font-size: 10px;
+    padding-left: 3%;
+  }
+
+  .form .two {
+    width: 25%;
+  }
+
+  .image-preview {
+    height: 25vh;
+  }
+
+  .result h3 {
+    font-size: 16px;
+  }
+
+  .result h4 {
+    font-size: 14px;
+  }
+}

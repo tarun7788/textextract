@@ -9,6 +9,7 @@
     "react-dom": "^19.0.0",
     "react-icons": "^5.4.0",
     "react-scripts": "5.0.1",
+    "react-spinners": "^0.15.0",
     "textextract": "file:"
   },
   "scripts": {
