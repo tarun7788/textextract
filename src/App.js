@@ -37,7 +37,7 @@ const App = () => {
     formData.append("file", file);
 
     try {
-      const response = await fetch("https://extract-licence-plate-number-production.up.railway.app/extract-number-plate/", {
+      const response = await fetch("http://127.0.0.1:8000/extract-number-plate/", {
         method: "POST",
         body: formData,
       });
